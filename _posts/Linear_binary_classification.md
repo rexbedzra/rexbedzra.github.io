@@ -18,7 +18,7 @@ This note focuses on the **perceptron algorithm**, a foundational method for sol
 ## Linear Binary Classification
 Consider a training set 
 \begin{equation}
-\left\{ \left({\mathbf{x}}_i, y_i\right) \right\}^N_{i=1},
+\left\{\left({\mathbf{x}}_i, y_i\right)\right\}^N_{i=1},
 \end{equation} 
 where each ${\mathbf{x}}_i$ is a feature vector and each label $y_i$ takes values in $\left\lbrace-1, +1\right\rbrace$. The goal is to find a linear function that maps feature vectors to labels. We consider classifiers of the form
 \begin{equation}
