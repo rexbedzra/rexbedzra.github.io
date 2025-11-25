@@ -1,7 +1,7 @@
 ---
-title: 'Future Blog Post'
-date: 2199-01-01
-permalink: /posts/2012/08/blog-post-6/
+title: 'Perceptron'
+date: 2025-11-25
+permalink: /posts/2025/11/blog-post-6/
 tags:
   - cool posts
   - category1
