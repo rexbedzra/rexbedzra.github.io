@@ -17,37 +17,33 @@ This note focuses on the **perceptron algorithm**, a foundational method for sol
 
 ## Linear Binary Classification
 Consider a training set 
-\begin{equation}
-\left\{\left({\mathbf{x}}_i, y_i\right)\right\}^N_{i=1},
-\end{equation} 
+$$\left\{\left({\mathbf{x}}_i, y_i\right)\right\}^N_{i=1},$$
 where each ${\mathbf{x}}_i$ is a feature vector and each label $y_i$ takes values in $\left\lbrace-1, +1\right\rbrace$. The goal is to find a linear function that maps feature vectors to labels. We consider classifiers of the form
-\begin{equation}
-f\left({\mathbf{x}}\right) = {\mathbf{w}}^{\top}{{\mathbf{x}}}+ w_0=\hat{\mathbf{w}}^{\top}\hat{\mathbf{x}},
-\tag{1}\end{equation}
+$$f\left({\mathbf{x}}\right) = {\mathbf{w}}^{\top}{{\mathbf{x}}}+ w_0=\hat{\mathbf{w}}^{\top}\hat{\mathbf{x}},\tag{1}$$
 where $\hat{\mathbf{x}}=\left[{\mathbf{x}}, 1\right]^{\top}$ and $\hat{\mathbf{w}}=\left[{\mathbf{w}}, w_0\right]^{\top}$ is a vector of real-valued parameters. Different choices of $\hat{\mathbf{w}}$ produce different linear functions, each corresponding to a hyperplane that attempts to separate the two classes in the training data.
 
 To evaluate a particular classifier, we measure its **training error**:
-\begin{equation}
+$$
 \frac{1}{N}\sum_{i=1}^N \mathbf{1}\!\left[f(\mathbf{x}_i) y_i \le 0 \right],
-\tag{2}\end{equation}
+\tag{2}$$
 where the indicator function $\mathbf{1}[\cdot]$ equals $1$ if the condition is true and $0$ otherwise. This quantity counts the proportion of misclassified training examples.
 
 <hr style="height: 1px;">
 
 ## Perceptron Algorithm
 The perceptron algorithm seeks a parameter vector $\hat{\mathbf{w}}$ that minimises the number of misclassifications. A training example $\left({\mathbf{x}}_i, y_i\right)$ is considered **misclassified** when
-\begin{equation}
+$$
 y_i\hat{\mathbf{w}}^\top\hat{\mathbf{x}}_i\leq 0.
-\tag{3}\end{equation}
+\tag{3}$$
 
 The algorithm iterates through the training set and updates the parameters only when a misclassification occurs. The update rule is
-\begin{equation}
+$$
 {\hat{\mathbf{w}}}\gets \hat{\mathbf{w}}+ y_i\hat{\mathbf{x}}_i. 
-\tag{4}\end{equation}
+\tag{4}$$
 To see why this corrects the mistake, consider evaluating the classifier on the same input after an update:
-\begin{equation}
+$$
 y_i\hat{\mathbf{w}}^\top\hat{\mathbf{x}}_i\quad \text{increases by}\quad \lVert{\hat{\mathbf{x}}_i\rVert}^2.
-\tag{5}\end{equation}
+\tag{5}$$
 Thus, repeated updates push the classifier toward correctly classifying ${\mathbf{x}}_i$. Misclassification of other examples may push $\hat{\mathbf{w}}$ in different directions, but the algorithm stops once all examples are correctly classified.
 
 If the data are linearly separable, the perceptron algorithm converges after a finite number of updates. For proof of convergence, see, e.g., Jaakkola (2006).
@@ -56,14 +52,14 @@ If the data are linearly separable, the perceptron algorithm converges after a f
 
 ## Learning Algorithm: Perceptron
 **Initialize**:
-\begin{equation}
+$$
 \hat{\mathbf{w}}=\mathbf{0}
-\end{equation}
+$$
 
 **Repeat until all examples are correctly classified**:
 1. For each training example $\left({\mathbf{x}}_i, y_i\right)$:
    - if $y_i\hat{\mathbf{w}}^\top\hat{\mathbf{x}}_i\leq 0$, update
-     \begin{equation}{\hat{\mathbf{w}}}\gets \hat{\mathbf{w}}+ y_i\hat{\mathbf{x}}_i\end{equation}
+     $${\hat{\mathbf{w}}}\gets \hat{\mathbf{w}}+ y_i\hat{\mathbf{x}}_i$$
      
 <hr style="height: 1px;">
 
