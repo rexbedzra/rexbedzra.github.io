@@ -20,7 +20,7 @@ Consider a training set
 \begin{equation}
 \left\{\left({\mathbf{x}}_i, y_i\right)\right\}^N_{i=1},
 \end{equation} 
-where each ${\mathbf{x}}_i$ is a feature vector and each label $y_i$ takes values in. The goal is to find a linear function that maps feature vectors to labels. We consider classifiers of the form
+where each ${\mathbf{x}}_i$ is a feature vector and each label $y_i$ takes values in . The goal is to find a linear function that maps feature vectors to labels. We consider classifiers of the form
 \begin{equation}
 f\left({\mathbf{x}}\right) = {\mathbf{w}}^{\top}{{\mathbf{x}}}+ w_0=\hat{\mathbf{w}}^{\top}\hat{\mathbf{x}},
 \tag{1}\end{equation}
